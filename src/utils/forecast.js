@@ -9,8 +9,8 @@ const forecast = (latitude,longitude,callback)=>{
         }else if(body.error){
             callback("Can not find, Please try another",undefined)
         }else{
-            // console.log(response.body)
-            const forecast = body.current.weather_descriptions[0] + '. It is currently ' + body.current.temperature + ' degress out. It feels like ' + body.current.feelslike + ' degress.'
+            // console.log(body)
+            const forecast = body.current.weather_descriptions[0] + '. It is currently ' + body.current.temperature + ' degress out. It feels like ' + body.current.feelslike + ' degress. Wind speed '+body.current.wind_speed
             callback(undefined,forecast)
         }
     })
